@@ -23,10 +23,8 @@ const MainComponent = () => {
     const randomIndex = Math.floor(Math.random() * textArray.length);
     const selectedText = textArray[randomIndex];
     setRandomText(selectedText);
-  };
-  const generateRandomImage = () => {
     const randomImage = Math.floor(Math.random() * arrayImages.length);
-    const selectedImage = textArray[randomImage];
+    const selectedImage = arrayImages[randomImage];
     setRandomImage(selectedImage);
   };
 
@@ -51,12 +49,16 @@ const MainComponent = () => {
         </div>
       </div>
       <div className="middle-main">
-        <img className="lion" src={randomImage} alt="Your Image"></img>
+        <img
+          className="lion"
+          src={`../public/images/${randomImage}`}
+          alt="Random Image"
+        />
         <p>{randomText}</p>
       </div>
       <div className="bottom-main">
         <button onClick={generateRandomText}>positive</button>
-        <button onClick={generateRandomImage}>negative</button>
+        <button>negative</button>
       </div>
     </div>
   );
