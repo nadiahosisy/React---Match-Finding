@@ -1,6 +1,14 @@
 import React from "react";
 
 const MainComponent = () => {
+  const objects = [
+    {
+      lion: "This is a lion",
+    },
+    {
+      cat: "This is a cat",
+    },
+  ];
   return (
     <div>
       <div className="top-main">
