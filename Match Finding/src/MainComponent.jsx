@@ -1,14 +1,35 @@
 import React from "react";
+import { useState } from "react";
 
 const MainComponent = () => {
+  const [randomText, setRandomText] = useState("This is a cat");
+  const [randomImage, setRandomImage] = useState("dog.jpg");
   const objects = [
     {
-      lion: "This is a lion",
+      "lion.jpg": "This is a lion",
     },
     {
-      cat: "This is a cat",
+      "cat.jpg": "This is a cat",
+    },
+    {
+      "dog.jpg": "This is a dog",
     },
   ];
+
+  const textArray = ["This is a cat", "This is a dog", "This is a lion"];
+  const arrayImages = ["lion.jpg", "cat.jpg", "dog.jpg"];
+
+  const generateRandomText = () => {
+    const randomIndex = Math.floor(Math.random() * textArray.length);
+    const selectedText = textArray[randomIndex];
+    setRandomText(selectedText);
+  };
+  const generateRandomImage = () => {
+    const randomImage = Math.floor(Math.random() * arrayImages.length);
+    const selectedImage = textArray[randomImage];
+    setRandomImage(selectedImage);
+  };
+
   return (
     <div>
       <div className="top-main">
@@ -30,16 +51,12 @@ const MainComponent = () => {
         </div>
       </div>
       <div className="middle-main">
-        <img
-          className="lion"
-          src="../public/images/lion.jpg"
-          alt="Your Image"
-        ></img>
-        <p>ygiuiuiuh</p>
+        <img className="lion" src={randomImage} alt="Your Image"></img>
+        <p>{randomText}</p>
       </div>
       <div className="bottom-main">
-        <button>positive</button>
-        <button>negative</button>
+        <button onClick={generateRandomText}>positive</button>
+        <button onClick={generateRandomImage}>negative</button>
       </div>
     </div>
   );
