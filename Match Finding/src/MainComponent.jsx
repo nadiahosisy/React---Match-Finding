@@ -21,11 +21,15 @@ const MainComponent = () => {
           <span>counter</span>
         </div>
       </div>
-      <div>
-        <img src="your-image-src.jpg" alt="Your Image"></img>
+      <div className="middle-main">
+        <img
+          className="lion"
+          src="../public/images/lion.jpg"
+          alt="Your Image"
+        ></img>
         <p>ygiuiuiuh</p>
       </div>
-      <div>
+      <div className="bottom-main">
         <button>positive</button>
         <button>negative</button>
       </div>

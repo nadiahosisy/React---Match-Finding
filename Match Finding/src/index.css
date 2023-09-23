@@ -28,3 +28,16 @@
   padding: 5px;
   text-align: center;
 }
+.lion {
+  width: 40rem;
+}
+.middle-main {
+  margin-top: 40px;
+}
+.bottom-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15rem;
+  margin-top: 40px;
+}
