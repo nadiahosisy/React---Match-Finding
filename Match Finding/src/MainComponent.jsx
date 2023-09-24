@@ -21,7 +21,7 @@ const MainComponent = () => {
       text: "This is a dog",
     },
     {
-      image: "panda.jpgs",
+      image: "panda.jpg",
       text: "This is a panda",
     },
     {
@@ -38,8 +38,24 @@ const MainComponent = () => {
     },
   ];
 
-  const textArray = ["This is a cat", "This is a dog", "This is a lion"];
-  const arrayImages = ["lion.jpg", "cat.jpg", "dog.jpg"];
+  const textArray = [
+    "This is a cat",
+    "This is a dog",
+    "This is a lion",
+    "This is a panda",
+    "This is a zebra",
+    "This is a fox",
+    "This is a pig",
+  ];
+  const arrayImages = [
+    "lion.jpg",
+    "cat.jpg",
+    "dog.jpg",
+    "panda.jpg",
+    "zebra.jpg",
+    "fox.jpg",
+    "pig.jpg",
+  ];
 
   const generateRandomText = (isTrueOrNot) => {
     const tempObj = objects.find((obj) => obj.image === randomImage);
