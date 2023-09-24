@@ -4,27 +4,65 @@ import { useState } from "react";
 const MainComponent = () => {
   const [randomText, setRandomText] = useState("This is a cat");
   const [randomImage, setRandomImage] = useState("dog.jpg");
+  const [countPos, setCountPos] = useState(0);
+  const [countNeg, setCountNeg] = useState(0);
+
   const objects = [
     {
-      "lion.jpg": "This is a lion",
+      image: "lion.jpg",
+      text: "This is a lion",
     },
     {
-      "cat.jpg": "This is a cat",
+      image: "cat.jpg",
+      text: "This is a cat",
     },
     {
-      "dog.jpg": "This is a dog",
+      image: "dog.jpg",
+      text: "This is a dog",
+    },
+    {
+      image: "panda.jpgs",
+      text: "This is a panda",
+    },
+    {
+      image: "zebra.jpg",
+      text: "This is a zebra",
+    },
+    {
+      image: "fox.jpg",
+      text: "This is a fox",
+    },
+    {
+      image: "pig.jpg",
+      text: "This is a pig",
     },
   ];
 
   const textArray = ["This is a cat", "This is a dog", "This is a lion"];
   const arrayImages = ["lion.jpg", "cat.jpg", "dog.jpg"];
 
-  const generateRandomText = () => {
+  const generateRandomText = (isTrueOrNot) => {
+    const tempObj = objects.find((obj) => obj.image === randomImage);
+
+    if (isTrueOrNot) {
+      if (tempObj.text === randomText) {
+        setCountPos(countPos + 1);
+      } else {
+        setCountNeg(countNeg + 1);
+      }
+    } else {
+      if (tempObj.text !== randomText) {
+        setCountPos(countPos + 1);
+      } else {
+        setCountNeg(countNeg + 1);
+      }
+    }
+
     const randomIndex = Math.floor(Math.random() * textArray.length);
     const selectedText = textArray[randomIndex];
     setRandomText(selectedText);
-    const randomImage = Math.floor(Math.random() * arrayImages.length);
-    const selectedImage = arrayImages[randomImage];
+    const randomImage2 = Math.floor(Math.random() * arrayImages.length);
+    const selectedImage = arrayImages[randomImage2];
     setRandomImage(selectedImage);
   };
 
@@ -37,7 +75,7 @@ const MainComponent = () => {
             src="../public/images/like.png"
             alt="Like"
           ></img>
-          <span>counter</span>
+          <span>{countPos}</span>
         </div>
         <div className="dislike-container">
           <img
@@ -45,7 +83,7 @@ const MainComponent = () => {
             src="../public/images/dislike.png"
             alt="Dislike"
           ></img>
-          <span>counter</span>
+          <span>{countNeg}</span>
         </div>
       </div>
       <div className="middle-main">
@@ -57,8 +95,8 @@ const MainComponent = () => {
         <p>{randomText}</p>
       </div>
       <div className="bottom-main">
-        <button onClick={generateRandomText}>positive</button>
-        <button>negative</button>
+        <button onClick={() => generateRandomText(true)}>True</button>
+        <button onClick={() => generateRandomText(false)}>Not True</button>
       </div>
     </div>
   );
