@@ -91,7 +91,7 @@ const MainComponent = () => {
             src="../public/images/like.png"
             alt="Like"
           ></img>
-          <span>{countPos}</span>
+          <span className="posCount">{countPos}</span>
         </div>
         <div className="dislike-container">
           <img
@@ -99,20 +99,27 @@ const MainComponent = () => {
             src="../public/images/dislike.png"
             alt="Dislike"
           ></img>
-          <span>{countNeg}</span>
+          <span className="negCount">{countNeg}</span>
         </div>
       </div>
       <div className="middle-main">
         <img
-          className="lion"
+          className="image"
           src={`../public/images/${randomImage}`}
           alt="Random Image"
         />
-        <p>{randomText}</p>
+        <p className="random-text">{randomText}</p>
       </div>
       <div className="bottom-main">
-        <button onClick={() => generateRandomText(true)}>True</button>
-        <button onClick={() => generateRandomText(false)}>Not True</button>
+        <button className="true-btn" onClick={() => generateRandomText(true)}>
+          True
+        </button>
+        <button
+          className="not-true-btn"
+          onClick={() => generateRandomText(false)}
+        >
+          Not True
+        </button>
       </div>
     </div>
   );
