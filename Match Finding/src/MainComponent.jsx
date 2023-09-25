@@ -69,6 +69,14 @@ const MainComponent = () => {
   useEffect(() => {
     if (gameCount === 10) {
       const timeoutId = setTimeout(() => {
+        if (countPos > countNeg) {
+          setAfterGameText(afterGameText[0]);
+        } else if (countPos < countNeg) {
+          setAfterGameText(afterGameText[2]);
+        } else {
+          setAfterGameText(afterGame[1]);
+        }
+
         setShowReplacement(true);
       }, 100);
 
