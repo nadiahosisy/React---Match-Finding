@@ -14,13 +14,14 @@ const MainComponent = () => {
 
   useEffect(() => {
     if (gameCount === 10) {
+      console.log(gameCount);
       const timeoutId = setTimeout(() => {
         if (countPos > countNeg) {
           setAfterGameText(afterGameText[0]);
         } else if (countPos < countNeg) {
           setAfterGameText(afterGameText[2]);
         } else {
-          setAfterGameText(afterGame[1]);
+          setAfterGameText(afterGameText[1]);
         }
 
         setButtonsDisabled(true);
