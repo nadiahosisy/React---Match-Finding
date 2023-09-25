@@ -158,22 +158,24 @@ const MainComponent = () => {
           </>
         )}
       </div>
-      <div className="bottom-main">
-        <button
-          className="true-btn"
-          onClick={() => generateRandom(true)}
-          disabled={buttonsDisabled}
-        >
-          True
-        </button>
-        <button
-          className="not-true-btn"
-          onClick={() => generateRandom(false)}
-          disabled={buttonsDisabled}
-        >
-          Not True
-        </button>
-      </div>
+      {gameCount < 10 && (
+        <div className="bottom-main">
+          <button
+            className="true-btn"
+            onClick={() => generateRandom(true)}
+            disabled={buttonsDisabled}
+          >
+            True
+          </button>
+          <button
+            className="not-true-btn"
+            onClick={() => generateRandom(false)}
+            disabled={buttonsDisabled}
+          >
+            Not True
+          </button>
+        </div>
+      )}
     </div>
   );
 };
