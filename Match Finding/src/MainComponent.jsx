@@ -74,6 +74,7 @@ const MainComponent = () => {
       }
     }
 
+    // comment
     const randomIndex = Math.floor(Math.random() * textArray.length);
     const selectedText = textArray[randomIndex];
     setRandomText(selectedText);
