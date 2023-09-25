@@ -68,7 +68,7 @@ const MainComponent = () => {
     setGameCount((gameCount) => gameCount + 1);
   }, [generateRandomText]);
 
-  const generateRandomText = (isTrueOrNot) => {
+  const generateRandom = (isTrueOrNot) => {
     const tempObj = objects.find((obj) => obj.image === randomImage);
 
     if (isTrueOrNot) {
@@ -123,13 +123,10 @@ const MainComponent = () => {
         <p className="random-text">{randomText}</p>
       </div>
       <div className="bottom-main">
-        <button className="true-btn" onClick={() => generateRandomText(true)}>
+        <button className="true-btn" onClick={() => generateRandom(true)}>
           True
         </button>
-        <button
-          className="not-true-btn"
-          onClick={() => generateRandomText(false)}
-        >
+        <button className="not-true-btn" onClick={() => generateRandom(false)}>
           Not True
         </button>
       </div>
