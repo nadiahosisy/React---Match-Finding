@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const MainComponent = () => {
   const [randomText, setRandomText] = useState("This is a cat");
@@ -58,6 +58,16 @@ const MainComponent = () => {
     "pig.jpg",
   ];
 
+  useEffect(() => {
+    if (gameCount === 10) {
+      alert("Game count reached 10!");
+    }
+  }, [gameCount]);
+
+  useEffect(() => {
+    setGameCount((gameCount) => gameCount + 1);
+  }, [generateRandomText]);
+
   const generateRandomText = (isTrueOrNot) => {
     const tempObj = objects.find((obj) => obj.image === randomImage);
 
@@ -82,12 +92,6 @@ const MainComponent = () => {
     const randomImage2 = Math.floor(Math.random() * arrayImages.length);
     const selectedImage = arrayImages[randomImage2];
     setRandomImage(selectedImage);
-
-    if (gameCount === 10) {
-      alert("Game over");
-    }
-
-    setGameCount(gameCount + 1);
   };
 
   return (
