@@ -7,7 +7,8 @@ const MainComponent = () => {
   const [countPos, setCountPos] = useState(0);
   const [countNeg, setCountNeg] = useState(0);
   const [gameCount, setGameCount] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showReplacement, setShowReplacement] = useState(false);
+  const [afterGameText, setAfterGameText] = useState("");
 
   const objects = [
     {
@@ -59,10 +60,16 @@ const MainComponent = () => {
     "pig.jpg",
   ];
 
+  const afterGameText = [
+    "You seem to know animals well, good job",
+    "You look like someone to know few animals, keep trying",
+    "You should watch national geographic chanel more my friend :)",
+  ];
+
   useEffect(() => {
     if (gameCount === 10) {
       const timeoutId = setTimeout(() => {
-        alert("Game count reached 10!");
+        setShowReplacement(true);
       }, 100);
 
       return () => clearTimeout(timeoutId);
@@ -118,12 +125,18 @@ const MainComponent = () => {
         </div>
       </div>
       <div className="middle-main">
-        <img
-          className="image"
-          src={`../public/images/${randomImage}`}
-          alt="Random Image"
-        />
-        <p className="random-text">{randomText}</p>
+        {showReplacement ? (
+          <p className="replacement-text">This is the replacement text.</p>
+        ) : (
+          <>
+            <img
+              className="image"
+              src={`../public/images/${randomImage}`}
+              alt="Random Image"
+            />
+            <p className="random-text">{randomText}</p>
+          </>
+        )}
       </div>
       <div className="bottom-main">
         <button className="true-btn" onClick={() => generateRandom(true)}>
