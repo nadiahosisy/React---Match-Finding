@@ -9,6 +9,7 @@ const MainComponent = () => {
   const [gameCount, setGameCount] = useState(0);
   const [showReplacement, setShowReplacement] = useState(false);
   const [afterGame, setAfterGameText] = useState("");
+  const [buttonsDisabled, setButtonsDisabled] = useState(false);
 
   const objects = [
     {
@@ -76,6 +77,8 @@ const MainComponent = () => {
         } else {
           setAfterGameText(afterGame[1]);
         }
+
+        setButtonsDisabled(true);
 
         setShowReplacement(true);
       }, 100);
@@ -147,10 +150,18 @@ const MainComponent = () => {
         )}
       </div>
       <div className="bottom-main">
-        <button className="true-btn" onClick={() => generateRandom(true)}>
+        <button
+          className="true-btn"
+          onClick={() => generateRandom(true)}
+          disabled={buttonsDisabled}
+        >
           True
         </button>
-        <button className="not-true-btn" onClick={() => generateRandom(false)}>
+        <button
+          className="not-true-btn"
+          onClick={() => generateRandom(false)}
+          disabled={buttonsDisabled}
+        >
           Not True
         </button>
       </div>
