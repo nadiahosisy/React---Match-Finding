@@ -7,6 +7,7 @@ const MainComponent = () => {
   const [countPos, setCountPos] = useState(0);
   const [countNeg, setCountNeg] = useState(0);
   const [gameCount, setGameCount] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const objects = [
     {
@@ -60,15 +61,17 @@ const MainComponent = () => {
 
   useEffect(() => {
     if (gameCount === 10) {
-      alert("Game count reached 10!");
+      const timeoutId = setTimeout(() => {
+        alert("Game count reached 10!");
+      }, 100);
+
+      return () => clearTimeout(timeoutId);
     }
   }, [gameCount]);
 
-  useEffect(() => {
-    setGameCount((gameCount) => gameCount + 1);
-  }, [generateRandomText]);
-
   const generateRandom = (isTrueOrNot) => {
+    setGameCount(gameCount + 1);
+
     const tempObj = objects.find((obj) => obj.image === randomImage);
 
     if (isTrueOrNot) {
