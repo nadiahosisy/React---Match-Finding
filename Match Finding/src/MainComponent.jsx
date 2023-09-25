@@ -6,6 +6,7 @@ const MainComponent = () => {
   const [randomImage, setRandomImage] = useState("dog.jpg");
   const [countPos, setCountPos] = useState(0);
   const [countNeg, setCountNeg] = useState(0);
+  const [gameCount, setGameCount] = useState(0);
 
   const objects = [
     {
@@ -81,6 +82,12 @@ const MainComponent = () => {
     const randomImage2 = Math.floor(Math.random() * arrayImages.length);
     const selectedImage = arrayImages[randomImage2];
     setRandomImage(selectedImage);
+
+    if (gameCount === 10) {
+      alert("Game over");
+    }
+
+    setGameCount(gameCount + 1);
   };
 
   return (
