@@ -8,7 +8,7 @@ const MainComponent = () => {
   const [countNeg, setCountNeg] = useState(0);
   const [gameCount, setGameCount] = useState(0);
   const [showReplacement, setShowReplacement] = useState(false);
-  const [afterGameText, setAfterGameText] = useState("");
+  const [afterGame, setAfterGameText] = useState("");
 
   const objects = [
     {
@@ -126,7 +126,7 @@ const MainComponent = () => {
       </div>
       <div className="middle-main">
         {showReplacement ? (
-          <p className="replacement-text">This is the replacement text.</p>
+          <p className="replacement-text">{afterGame}</p>
         ) : (
           <>
             <img
