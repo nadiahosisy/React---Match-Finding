@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { objects, textArray, arrayImages, afterGameText } from "../data/data";
 
 const MainComponent = () => {
   const [randomText, setRandomText] = useState("This is a cat");

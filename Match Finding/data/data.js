@@ -1,4 +1,4 @@
-const objects = [
+export const objects = [
   {
     image: "lion.jpg",
     text: "This is a lion",
@@ -29,7 +29,7 @@ const objects = [
   },
 ];
 
-const textArray = [
+export const textArray = [
   "This is a cat",
   "This is a dog",
   "This is a lion",
@@ -38,7 +38,7 @@ const textArray = [
   "This is a fox",
   "This is a pig",
 ];
-const arrayImages = [
+export const arrayImages = [
   "lion.jpg",
   "cat.jpg",
   "dog.jpg",
@@ -48,7 +48,7 @@ const arrayImages = [
   "pig.jpg",
 ];
 
-const afterGameText = [
+export const afterGameText = [
   "You seem to know animals well, good job",
   "You look like someone to know few animals, keep trying",
   "You should watch national geographic chanel more my friend :)",
