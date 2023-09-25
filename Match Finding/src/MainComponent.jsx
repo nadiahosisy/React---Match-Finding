@@ -115,6 +115,10 @@ const MainComponent = () => {
     setRandomImage(selectedImage);
   };
 
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
   return (
     <div>
       <div className="top-main">
@@ -139,7 +143,9 @@ const MainComponent = () => {
         {showReplacement ? (
           <>
             <p className="replacement-text">{afterGame}</p>
-            <button className="reset-btn">Reset</button>
+            <button className="reset-btn" onClick={refreshPage}>
+              Reset
+            </button>
           </>
         ) : (
           <>
