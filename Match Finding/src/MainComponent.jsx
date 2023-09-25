@@ -137,7 +137,10 @@ const MainComponent = () => {
       </div>
       <div className="middle-main">
         {showReplacement ? (
-          <p className="replacement-text">{afterGame}</p>
+          <>
+            <p className="replacement-text">{afterGame}</p>
+            <button className="reset-btn">Reset</button>
+          </>
         ) : (
           <>
             <img
