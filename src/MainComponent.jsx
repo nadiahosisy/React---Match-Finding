@@ -69,17 +69,13 @@ const MainComponent = () => {
     <div>
       <div className="top-main">
         <div className="like-container">
-          <img
-            className="like-img"
-            src="../public/images/like.png"
-            alt="Like"
-          ></img>
+          <img className="like-img" src="../images/like.png" alt="Like"></img>
           <span className="posCount">{countPos}</span>
         </div>
         <div className="dislike-container">
           <img
             className="dislike-img"
-            src="../public/images/dislike.png"
+            src="../images/dislike.png"
             alt="Dislike"
           ></img>
           <span className="negCount">{countNeg}</span>
@@ -97,7 +93,7 @@ const MainComponent = () => {
           <>
             <img
               className="image"
-              src={`../public/images/${randomImage}`}
+              src={`../images/${randomImage}`}
               alt="Random Image"
             />
             <p className="random-text">{randomText}</p>
