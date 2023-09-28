@@ -75,7 +75,7 @@ const MainComponent = () => {
         <div className="dislike-container">
           <img
             className="dislike-img"
-            src="../images/dislike.png"
+            src="./images/dislike.png"
             alt="Dislike"
           ></img>
           <span className="negCount">{countNeg}</span>
@@ -93,7 +93,7 @@ const MainComponent = () => {
           <>
             <img
               className="image"
-              src={`../images/${randomImage}`}
+              src={`./images/${randomImage}`}
               alt="Random Image"
             />
             <p className="random-text">{randomText}</p>
